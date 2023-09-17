@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grapect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            text-align: center;
+            background-image: url('{{ url_for("static", filename="home-2.jpg") }}');
+            /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #FFF;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 59.063px;
+            font-style: normal;
+            font-weight: 700;
+            width: 543px;
+            line-height: 1.2;
+            letter-spacing: -1.181px;
+            margin-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #FFF;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 29.109px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.582px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+
+        h3 {
+            color: #FFF;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 24.963px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.499px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            width: 400px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 2px solid #553B65;
+            background: #FFF;
+            cursor: pointer;
+            color: #553B65;
+            font-family: Poppins;
+            font-size: 21.109px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.422px;
+            margin-bottom: 20px;
+        }
+
+        label:hover {
+            background-color: #e7cff6;
+        }
+
+        #submit-btn {
+            border-radius: 10px;
+            border: 2px solid #FFF;
+            background: #553B65;
+            cursor: pointer;
+            color: #FFF;
+            font-family: Poppins;
+            font-size: 21.109px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.422px;
+            padding: 10px 20px;
+            width: 150px;
+        }
+
+        #submit-btn:hover {
+            background-color: #9875AE;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grape Leaf<br>Disease Detection</h1>
+    <h2>You fetch the leaves, we find the cure!</h2>
+    <h3>Upload a Grape leaf image</h3>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="upload" accept="image/*">
+        <label for="upload" id="upload-label">Select an image</label>
+        <br>
+        <input type="submit" value="Predict" id="submit-btn">
+    </form>
+</body>
+</html>
