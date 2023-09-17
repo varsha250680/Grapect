@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            background-image: url('{{ url_for("static", filename="home-5.jpg") }}');
+            font-family: Arial, sans-serif;
+            color: #000;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #result {
+            margin-top: 333.61px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        #remedy {
+            margin-top: 80px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        <p>{{ predicted_class }}</p>
+    </div>
+    <div id="remedy">
+        <p>{{ remedy }}</p>
+    </div>
+</body>
+</html>
